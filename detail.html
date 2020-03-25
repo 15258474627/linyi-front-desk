@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="zh-cn">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,142 +18,183 @@
 </head>
 
 <body>
-<div class="main-container">
+  <div class="main-container bg-grey inpage">
+      <div class="banner detail-banner">
+        <div class="banner-box">
+          <div class="txt">
+            <img class="banner-tilte" src="images/banner-title.png" alt="" />
+            <ul>
+              <li>一站汇聚</li>
+              <li>精准查询</li>
+              <li>在线办理</li>
+            </ul>
+          </div>
+          <div class="search-box content-container">
+            <div class="box-top">
+              <div class="weui-cells">
+                <div class="weui-cell weui-cell_select weui-cell_select-before">
+                  <div class="weui-cell__hd">
+                    <div class="weui-select">
+                      <span class="first">惠企政策</span>
+                      <!-- <ul>
+                        <li title="惠企政策">惠企政策</li>
+                        <li title="惠企政策2">惠企政策2</li>
+                        <li title="惠企政策3">惠企政策3</li>
+                      </ul> -->
+                    </div>
+                  </div>
+                  <div class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入事项名称" type="text" id="search">
+                  </div>
+                </div>
+              </div>
+              <button class="weui-btn weui-btn_primary search_button">搜索</button>
+            </div>
+            <div class="keywords">
+              <span>热搜词：</span>
+              <a href="http://111.16.49.6:81/list.html?searchname=疫情防控">疫情防控</a>
+              <a href="http://111.16.49.6:81/list.html?searchname=财政补贴">财政补贴</a>
+              <a href="http://111.16.49.6:81/list.html?searchname=税收优惠">税收优惠</a>
+              <a href="http://111.16.49.6:81/list.html?searchname=增值税">增值税</a>
+              <a href="http://111.16.49.6:81/list.html?searchname=缓缴">缓缴</a>
+              <a href="http://111.16.49.6:81/list.html?searchname=减免">减免</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="banner">
-    <div class="banner-box">
-      <div class="txt">
-        <img class="banner-tilte" src="images/banner-title.png" alt="" />
-        <ul>
-          <li>一站汇聚</li>
-          <li>精准查询</li>
-          <li>在线办理</li>
-        </ul>
+      <div class="content-container">
+        <div class="layout-wrapper">
+          <ol class="breadcrumb">
+            <li>当前位置：</li>
+            <li><a href="index.html" target="_blank">山东临沂政企直通车</a></li>
+            <li><a href="http://111.16.49.6:81/list.html" title="抗疫惠企政策">事项列表</a></li>
+            <li>事项详情</li>
+          </ol>
+
+          <div class="content-article">
+            <!-- <h1 class="article-title">取得政府规定标准的疫情防治临时性工作补助和奖金免征个人所得税</h1>
+            <div class="article-info">
+              <span>企业规模：中小企业</span>
+              <span>行业类型：服务业</span>
+            </div>
+            <div class="article-con">
+              <ul>
+                <li>
+                  <span class="sub-name">实施主体</span>
+                  <div class="sub-con">临沂市税务局</div>
+                </li>
+                <li>
+                  <span class="sub-name">服务对象</span>
+                  <div class="sub-con">参加疫情防治工作的医务人员和防疫工作者</div>
+                </li>
+                <li>
+                  <span class="sub-name">政策依据</span>
+                  <div class="sub-con">
+                    <ol>
+                      <li><a href="javascript:void(0)">《财政部 税务总局关于支持新型冠状病毒感染的肺炎疫情防控有关个人所得税政策的公告》</a>（2020年第10号）</li>
+                    </ol>
+                  </div>
+                </li>
+                <li>
+                  <span class="sub-name">办理条件</span>
+                  <div class="sub-con">符合条件的，自行申报或者单位扣缴时均可享受</div>
+                </li>
+                <li>
+                  <span class="sub-name">补贴标准</span>
+                  <div class="sub-con">
+                    自2020年1月1日起，对参加疫情防治工作的医务人员和防疫工作者按照政府规定标准取得的临时性工作补助和奖金，免征个人所得税。政府规定标准包括各级政府规定的补助和奖金标准。</div>
+                </li>
+                <li>
+                  <span class="sub-name">申请材料</span>
+                  <div class="sub-con">
+                    <ol>
+                      <li>对参加疫情防治工作的医务人员和防疫工作者按照政府规定标准取得的临时性工作补助和奖金</li>
+                      <li>政府规定标准包括各级政府规定的补助和奖金标准</li>
+                      <li>防疫工作者按照政府规定标准取得的临时性工作补助和奖金</li>
+                    </ol>
+                  </div>
+                </li>
+                <li>
+                  <span class="sub-name">咨询电话</span>
+                  <div class="sub-con"><strong>12366</strong></div>
+                </li>
+                <li>
+                  <span class="sub-name">常见问题</span>
+                  <div class="sub-con">
+                    1. 优惠政策的适用期限是多久？ <br />
+                    答：上述优惠政策适用的截止日期将视疫情情况另行公告。<br />
+                    <br />
+                    2.如何享受该优惠政策？<br />
+                    答：疫情防控重点保障物资生产企业适用增值税增量留抵退税政策的，应当在增值税纳税申报期内，完成本期增值税纳税申报后，向主管税务机关申请退还增量留抵税额。
+                  </div>
+                </li>
+              </ul>
+              <div id="goCash">
+                <a href="javascript:void(0)" class="weui-btn weui-btn_primary go-cash" data-toggle="modal"
+                  data-target="#myModal">前往兑现</a>
+                <a href="http://111.16.49.6:81/list.html" class="weui-btn weui-btn_default">返回列表</a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="footer content-container">
+        <span>Copyright©2020临沂市行政审批局</span>
+        <span>技术支持：北京国脉互联信息顾问有限公司 国脉集团有限公司</span>
+        <span class="tool">请使用Chrome、360浏览器极速模式或其它非IE内核浏览器访问</span>
+      </div>
+      
+      <div class="bg-box">
+      </div>
+  </div>
+  <!-- Modal -->
+  <div class="cash-modal cash-modal-small modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">选择兑现通道</h4>
+        </div>
+        <div class="modal-box">
+          <div class="modal-body" id="modalLabelList">
+            
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="content-container">
-    <div class="layout-wrapper">
-      <ol class="breadcrumb">
-        <li>当前位置：</li>
-        <li><a href="index.html" target="_blank">山东临沂政企直通车</a></li>
-        <li><a href="list.html" title="抗疫惠企政策">事项列表</a></li>
-        <li>事项详情</li>
-      </ol>
-
-      <div class="content-article">
-        <!-- <h1 class="article-title">取得政府规定标准的疫情防治临时性工作补助和奖金免征个人所得税</h1>
-        <div class="article-info">
-          <span>实施主体：临沂市税务局</span>
-          <span>行业类型：信息传输业</span>
-          <span>咨询电话：12366</span>
-        </div>
-        <div class="article-con">
-         <ul>
-           <li>
-             <span class="sub-name">补助对象</span>
-             <div class="sub-con">参加疫情防治工作的医务人员和防疫工作者</div>
-           </li>
-           <li>
-             <span class="sub-name">政策依据</span>
-             <div class="sub-con">
-               <ol>
-                 <li><a href="javascript:void(0)">《财政部 税务总局关于支持新型冠状病毒感染的肺炎疫情防控有关个人所得税政策的公告》</a>（2020年第10号）</li>
-               </ol>
-             </div>
-           </li>
-           <li>
-             <span class="sub-name">部门业务系统及链接地址</span>
-             <div class="sub-con">进入山东省电子税务局（地址：<a class="web-id" href="javascript:void(0)">https://etax.shandong.chinatax.gov.cn/</a>）下载自然人电子税务局(扣缴端)</div>
-           </li>
-           <li>
-             <span class="sub-name">办理条件</span>
-             <div class="sub-con">符合条件的，自行申报或者单位扣缴时均可享受</div>
-           </li>
-           <li>
-             <span class="sub-name">补贴标准</span>
-             <div class="sub-con">自2020年1月1日起，对参加疫情防治工作的医务人员和防疫工作者按照政府规定标准取得的临时性工作补助和奖金，免征个人所得税。政府规定标准包括各级政府规定的补助和奖金标准。</div>
-           </li>
-           <li>
-             <span class="sub-name">申请材料</span>
-             <div class="sub-con">
-               <ol>
-                 <li>对参加疫情防治工作的医务人员和防疫工作者按照政府规定标准取得的临时性工作补助和奖金</li>
-                 <li>政府规定标准包括各级政府规定的补助和奖金标准</li>
-                 <li>防疫工作者按照政府规定标准取得的临时性工作补助和奖金</li>
-               </ol>
-            </div>
-           </li>
-           <li>
-             <span class="sub-name">办理人员</span>
-             <div class="sub-con">
-              <span>张好人，0539-65641178，13805394668</span><span>李时景，0539-65641178，13805394668</span>
-            </div>
-           </li>
-           <li>
-             <span class="sub-name">审查流程</span>
-             <div class="sub-con">
-              自2020年1月1日起，对参加疫情防治工作的医务人员和防疫工作者按照政府规定标准取得的临时性工作补助和奖金，免征个人所得税。政府规定标准包括各级政府规定的补助和奖金标准。
-            </div>
-           </li>
-           <li>
-             <span class="sub-name">常见问题</span>
-             <div class="sub-con">
-              1. 优惠政策的适用期限是多久？ <br/>
-              答：上述优惠政策适用的截止日期将视疫情情况另行公告。<br/>
-              <br/>
-              2.如何享受该优惠政策？<br/>
-              答：疫情防控重点保障物资生产企业适用增值税增量留抵退税政策的，应当在增值税纳税申报期内，完成本期增值税纳税申报后，向主管税务机关申请退还增量留抵税额。
-            </div>
-           </li>
-         </ul>
-        </div>
-      </div> -->
-      </div>
-      <div id="goCash">
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <ul>
-      <li><img src="images/gov_44.png" alt=""/></li>
-      <li>临沂市人民政府版权所有copyright 2016</li>
-      <li><span>临沂市人民政府主办</span><span>临沂市行政审批服务局承办</span></li>
-      <li>鲁ICP备13011795号</li>
-      <li>网站标识码：3713000067</li>
-      <li>鲁公网安备37130202371747号</li>
-      <li>咨询电话:0539-8770035</li>
-      <li><a href="http://lyzwfw.sd.gov.cn/lys/public/index/sitemap">网站地图</a></li>
-    </ul>
-  </div>
-</div>
-<script src="js/jquery.min.js"></script>
-<script src="js/base.js"></script>
-<script>
-  function GetQueryString(name) {
-     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-     var r = window.location.search.substr(1).match(reg);
-     if(r!=null)return  unescape(r[2]); return null;
-  }
-  $.ajax({
-      url: baseUrl + '/standard/mat_matter/' +GetQueryString('id'),
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/base.js"></script>
+  <script>
+    function GetQueryString(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) return unescape(r[2]); return null;
+    }
+    $.ajax({
+      url: baseUrl + '/standard/mat_matter/' + GetQueryString('id'),
       type: 'get',
       dataType: 'json',
       success: function (res) {
-        if( res.data !== null ){
+        if (res.data !== null) {
           let policyBasis = ''
-          if(res.data.policyBasisJson.length>0){
-            res.data.policyBasisJson.forEach((ele,indexs)=>{
-              policyBasis=policyBasis+`<div style="margin-right:20px;">${ele.policyBasisName}</div>`
+          if (res.data.policyBasisJson.length > 0) {
+            res.data.policyBasisJson.forEach((ele, indexs) => {
+              if(ele.policyBasisUrl){
+                policyBasis = policyBasis + `<li><a href="${ele.policyBasisUrl}">${ele.policyBasisName}</a></li>`
+              }
+              else{
+                policyBasis = policyBasis + `<li>${ele.policyBasisName}</li>`
+              }
             })
           }
           let accepting = ''
-          if(res.data.acceptingOfficerJson.length>0){
-            res.data.acceptingOfficerJson.forEach((ele,indexs)=>{
-              accepting=accepting+`<span>${ele.acceptingOfficerName}，${ele.acceptingOfficerPhone}</span>`
+          if (res.data.acceptingOfficerJson.length > 0) {
+            res.data.acceptingOfficerJson.forEach((ele, indexs) => {
+              accepting = accepting + `<span>${ele.acceptingOfficerName}，${ele.acceptingOfficerPhone}</span>`
             })
           }
           // let newDepartmentBusiness=''
@@ -163,88 +205,97 @@
           // else{
           //   newDepartmentBusiness=''
           // }
-          let industryTypeId=res.data.industryType
-          let industryTypeName=''
-          industryTypeId.forEach((typeId,typeIndex) => {
+          let industryTypeId = res.data.industryType
+          let industryTypeName = ''
+          industryTypeId.forEach((typeId, typeIndex) => {
             $.ajax({
               url: baseUrl + '/admin/sysDictItem/page?current=1&size=10000&dictId=290',
               type: 'get',
               dataType: 'json',
-              async:false,
+              async: false,
               success: function (res) {
-                if( res.data !== null ){
-                  res.data.records.forEach((item,index) => {
-                    if(item.value==industryTypeId[typeIndex]){
-                      industryTypeName=industryTypeName+item.label+'、'
+                if (res.data !== null) {
+                  res.data.records.forEach((item, index) => {
+                    if (item.value == industryTypeId[typeIndex]) {
+                      industryTypeName = industryTypeName + item.label + '、'
                       return
                     }
                   })
                 }
-                else{
+                else {
                 }
               }
             })
           })
-          industryTypeName=industryTypeName.substr(0,industryTypeName.length-1)
-          let industrySizeId=res.data.industrySize
-          let industrySizeName=''
-          industrySizeId.forEach((typeId,typeIndex) => {
+          industryTypeName = industryTypeName.substr(0, industryTypeName.length - 1)
+          let industrySizeId = res.data.industrySize
+          let industrySizeName = ''
+          industrySizeId.forEach((typeId, typeIndex) => {
             $.ajax({
               url: baseUrl + '/admin/sysDictItem/page?current=1&size=10000&dictId=289',
               type: 'get',
               dataType: 'json',
-              async:false,
+              async: false,
               success: function (res) {
-                if( res.data !== null ){
-                  res.data.records.forEach((item,index) => {
-                    if(item.value==industrySizeId[typeIndex]){
-                      industrySizeName=industrySizeName+item.label+'、'
+                if (res.data !== null) {
+                  res.data.records.forEach((item, index) => {
+                    if (item.value == industrySizeId[typeIndex]) {
+                      industrySizeName = industrySizeName + item.label + '、'
                       return
                     }
                   })
                 }
-                else{
+                else {
 
                 }
               }
             })
           })
-          industrySizeName=industrySizeName.substr(0,industrySizeName.length-1)
-        $('.content-article').append(`<h1 class="article-title">${res.data.matterName}</h1>
+          industrySizeName = industrySizeName.substr(0, industrySizeName.length - 1)
+          if(res.data.applyStatus==0){
+            cashShow = `<a class="weui-btn weui-btn_primary go-cash btn-grey">无需申请</a>`
+          }
+          else if(res.data.matDepartmentBusinessSystemList.length && res.data.applyStatus==1){
+            cashShow = `<a class="weui-btn weui-btn_primary go-cash" data-toggle="modal" data-target="#myModal" onclick="cashModal(${res.data.id})">兑现</a>`
+          }
+          else{
+            cashShow = `<a class="weui-btn weui-btn_primary go-cash btn-grey">兑现</a>`
+          }
+
+          $('.content-article').append(`<h1 class="article-title">${res.data.matterName}</h1>
         <div class="article-info">
-          <span>实施主体：${res.data.deptName}</span>
-          <span>咨询电话：${res.data.telephone}</span>
+          <span class="sub-name">企业规模：${industrySizeName}<a class="question" title="点击查看" href="show_detail.html" target="_blank"><img src="images/qw.png" /></a></span>
+          <span class="sub-name">行业类型：${industryTypeName}<i class="question"><img src="images/qw.png" /></i>
+            <div class="question-box">
+              <i></i>
+              <p>A&nbsp;&nbsp;农、林、牧、渔业</p>
+              <p>B&nbsp;&nbsp;采矿业</p>
+              <p>C&nbsp;&nbsp;制造业</p>
+              <p>D&nbsp;&nbsp;电力、热力、燃气及水生产和供应业</p>
+              <p>E&nbsp;&nbsp;建筑业</p>
+              <p>F&nbsp;&nbsp;批发和零售业</p>
+              <p>G&nbsp;&nbsp;交通运输、仓储和邮政业</p>
+              <p>H&nbsp;&nbsp;住宿和餐饮业</p>
+              <p>I&nbsp;&nbsp;信息传输、软件和信息技术服务业</p>
+              <p>J&nbsp;&nbsp;金融业</p>
+              <p>K&nbsp;&nbsp;房地产业</p>
+              <p>L&nbsp;&nbsp;租赁和商务服务业</p>
+              <p>M&nbsp;&nbsp;科学研究和技术服务业</p>
+              <p>N&nbsp;&nbsp;水利、环境和公共设施管理业</p>
+              <p>O&nbsp;&nbsp;居民服务、修理和其他服务业</p>
+              <p>P&nbsp;&nbsp;教育</p>
+              <p>Q&nbsp;&nbsp;卫生和社会工作</p>
+              <p>R&nbsp;&nbsp;文化、体育和娱乐业</p>
+              <p>S&nbsp;&nbsp;公共管理、社会保障和社会组织</p>
+            </div>
+          </span>
         </div>
         <div class="article-con">
          <ul>
             <li>
-             <span class="sub-name">企业规模<a title="点击查看" class="question" href="show_detail.html" target="_blank"><img src="images/qw.png"/></a></span>
-             <div class="sub-con">${industrySizeName}</div>
-           </li>
-           <li>
-             <span class="sub-name">行业类型<i class="question"><img src="images/qw.png" /></i></span>
-             <div class="sub-con">${industryTypeName}</div>
-             <div class="question-box">
-               <p>A&nbsp;&nbsp;农、林、牧、渔业</p>
-               <p>B&nbsp;&nbsp;采矿业</p>
-               <p>C&nbsp;&nbsp;制造业</p>
-               <p>D&nbsp;&nbsp;电力、热力、燃气及水生产和供应业</p>
-               <p>E&nbsp;&nbsp;建筑业</p>
-               <p>F&nbsp;&nbsp;批发和零售业</p>
-               <p>G&nbsp;&nbsp;交通运输、仓储和邮政业</p>
-               <p>H&nbsp;&nbsp;住宿和餐饮业</p>
-               <p>I&nbsp;&nbsp;信息传输、软件和信息技术服务业</p>
-               <p>J&nbsp;&nbsp;金融业</p>
-               <p>K&nbsp;&nbsp;房地产业</p>
-               <p>L&nbsp;&nbsp;租赁和商务服务业</p>
-               <p>M&nbsp;&nbsp;科学研究和技术服务业</p>
-               <p>N&nbsp;&nbsp;水利、环境和公共设施管理业</p>
-               <p>P&nbsp;&nbsp;教育</p>
-               <p>Q&nbsp;&nbsp;卫生和社会工作</p>
-               <p>R&nbsp;&nbsp;文化、体育和娱乐业</p>
-               <p>S&nbsp;&nbsp;公共管理、社会保障和社会组织</p>
-             </div>
-           </li>
+              <span class="sub-name">实施主体</span>
+              <div class="sub-con">${res.data.implementationName}</div>
+            </li>
            <li>
              <span class="sub-name">服务对象</span>
              <div class="sub-con">${res.data.subsidizedObject}</div>
@@ -252,7 +303,9 @@
            <li>
              <span class="sub-name">政策依据</span>
              <div class="sub-con">
-              ${policyBasis}
+              <ol>
+                ${policyBasis}
+              </ol>
              </div>
            </li>
            <li>
@@ -260,7 +313,7 @@
              <div class="sub-con">${res.data.handlingConditions.replace(/(\r\n|\n|\r)/gm, "<br />")}</div>
            </li>
            <li>
-             <span class="sub-name">标准</span>
+             <span class="sub-name">补贴标准</span>
              <div class="sub-con">${res.data.subsidyStandard.replace(/(\r\n|\n|\r)/gm, "<br />")}</div>
            </li>
            <li>
@@ -270,34 +323,71 @@
             </div>
            </li>
            <li>
+             <span class="sub-name">咨询电话</span>
+             <div class="sub-con"><strong>${res.data.telephone}</strong></div>
+           </li>
+           <li>
              <span class="sub-name">常见问题</span>
              <div class="sub-con">
               ${res.data.question.replace(/(\r\n|\n|\r)/gm, "<br />")}
             </div>
            </li>
          </ul>
-        </div>
-      </div>`)
-          if(res.data.departmentBusinessSystemAddress){
-            $('#goCash').append(`<a href="${res.data.departmentBusinessSystemAddress}" target="_blank" class="weui-btn weui-btn_primary go-cash">前往兑现</a>`)
+         <div id="goCash">
+            ${cashShow}
+            <a href="http://111.16.49.6:81/list.html" class="weui-btn weui-btn_default">返回列表</a>
+          </div>
+        </div>`)
+        $('.question').hover(function () {
+            console.log(121)
+            $(this).siblings('.question-box').toggleClass('active');
+          });
+        } else {
+          window.location.href = "404.html"
+        }
+        $('table').attr('border', "1").attr('bordercolor', "#000000")
+      },
+      error: function (data) {
+        //window.location.href="404.html" 
+      }
+    })
+    $(function(){
+      //搜索按钮
+      $('.search_button').click(function(){
+        let name = $('#search').val()
+        window.open(`http://111.16.49.6:81/list.html?searchname=${name}`)
+      })
+    })
+    //兑现按钮
+  function cashModal(id){
+    $("#modalLabelList").empty()
+    $.ajax({
+      url: baseUrl + '/standard/mat_matter/' + id,
+      type: 'get',
+      dataType: 'json',
+      success: function (res) {
+        if (res.data !== null) {
+          if(res.data.matDepartmentBusinessSystemList.length>4){
+            $('#myModal').removeClass("cash-modal-small")
           }
           else{
-            $('#goCash').append(`<a class="weui-btn weui-btn_primary go-cash btn-grey">前往兑现</a>`)
+            $('#myModal').addClass("cash-modal-small")
           }
-          
-          $('.question').hover(function(){
-            $(this).parents('.article-con ul li').children('.question-box').toggleClass('active');
-          });
-        }else{
-          window.location.href="404.html" 
+          res.data.matDepartmentBusinessSystemList.forEach((element,index) => {
+            $("#modalLabelList").append(`<a class="weui-btn" title="${element.departmentBusinessSystemName}" href="${element.departmentBusinessSystemAddress}" target="_blank">${element.departmentBusinessSystemName}</a>`)
+          })
         }
-        $('table').attr('border',"1").attr('bordercolor',"#000000")
+        else {
+          window.location.href = "404.html"
+        }
       },
-      error : function(data){
+      error: function (data) {
         window.location.href="404.html" 
       }
     })
-    
-</script>
+  }
+
+  </script>
 </body>
+
 </html>

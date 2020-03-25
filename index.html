@@ -37,10 +37,6 @@
           <div class="weui-cells">
             <div class="weui-cell weui-cell_select weui-cell_select-before">
               <div class="weui-cell__hd">
-                <!-- <select class="weui-select">
-                  <option value="1"></option>
-                  <option value="2"></option>
-                </select> -->
                 <div class="weui-select">
                   <span class="first">惠企政策</span>
                   <!-- <ul>
@@ -51,40 +47,34 @@
                 </div>
               </div>
               <div class="weui-cell__bd">
-                请输入事项名称
+                <input class="weui-input" placeholder="请输入事项名称" type="text" id="search">
               </div>
             </div>
           </div>
-          <button class="weui-btn weui-btn_primary">搜索</button>
+          <button class="weui-btn weui-btn_primary search_button">搜索</button>
         </div>
         <div class="keywords">
           <span>热搜词：</span>
-          <a href="javascript:void(0)">疫情控制</a><a href="javascript:void(0)">优惠政策</a><a
-            href="javascript:void(0)">项目申报</a>
-          <a href="javascript:void(0)">增值税</a><a href="javascript:void(0)">交通运输</a><a href="javascript:void(0)">
-            物资生产</a>
+          <a href="http://111.16.49.6:81/list.html?searchname=疫情防控">疫情防控</a>
+          <a href="http://111.16.49.6:81/list.html?searchname=财政补贴">财政补贴</a>
+          <a href="http://111.16.49.6:81/list.html?searchname=税收优惠">税收优惠</a>
+          <a href="http://111.16.49.6:81/list.html?searchname=增值税">增值税</a>
+          <a href="http://111.16.49.6:81/list.html?searchname=缓缴">缓缴</a>
+          <a href="http://111.16.49.6:81/list.html?searchname=减免">减免</a>
         </div>
       </div>
 
       <div class="tab-container content-container">
         <ul class="tab-nav">
-		  <li class="active"><img src="images/spread01.png" />惠企政策</li>
+		      <li class="active"><a href="http://111.16.49.6:81/list.html" target="_blank"><img src="images/spread01.png" />惠企政策</a></li>
           <li><a href="http://zwfw.linyi.gov.cn/icity/public/index" target="_blank"><img src="images/spread02.png" />办事服务</a></li>
-          <li><a href="http://61.133.111.91:7090" target="_blank"><img src="images/spread03.png" />诉求直达</a></li>
+          <li><a href="http://123.131.136.102:8699/companyLogin.html" target="_blank"><img src="images/spread03.png" />诉求直达</a></li>
           <li><img src="images/spread04.png" />互动交流</li>
           <li><a href="http://xzspjwx.linyi.gov.cn:8089/ext/linyi/eval/index.jsp" target="_blank"><img src="images/spread05.png" />绩效评价</a></li>
         </ul>
         <div class="tab-content-box">
           <div class="tab-content-item show">
             <ul id="mainContent">
-              <!-- <li>
-                <a class="txt" href="detail.html?id=20" target="_blank"
-                  title="加大旅游企业用工补贴力度(星级饭店)">加大旅游企业用工补贴力度(星级饭店)</a>
-                <div class="btn-group">
-                  <a href="detail.html?id=20" target="_blank" class="weui-btn weui-btn_primary">解读</a>
-                  <a href="" target="_blank" class="weui-btn weui-btn_primary">兑现</a>
-                </div>
-              </li> -->
             </ul>
             <a class="more" id="addMore">
               <div class="moreShow">
@@ -148,11 +138,31 @@
           </li>
         </ul>
       </div>
-	  <div class="spread-box content-container" style="text-align:center; color:#ababab";>请使用Chrome、360浏览器极速模式或其它非IE内核浏览器访问</div>
+	    <div class="footer content-container">
+        <span>Copyright©2020临沂市行政审批局</span>
+        <span>技术支持：北京国脉互联信息顾问有限公司  国脉集团有限公司</span>
+        <span class="tool">请使用Chrome、360浏览器极速模式或其它非IE内核浏览器访问</span>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="cash-modal cash-modal-small modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">选择兑现通道</h4>
+        </div>
+        <div class="modal-box">
+          <div class="modal-body" id="modalLabelList">
+            
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
 <script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script>
   $('.search-box .weui-select .first').click(function () {
     $('.search-box .weui-select ul').toggleClass('active');
@@ -186,20 +196,22 @@
     if( !val ){
       current = 0
     }
-    let name = $('#search').val()
     $.ajax({
       url: `${baseUrl}/standard/mat_matter/pages?current=1&size=${size}`,
       type: 'get',
       contentType: "application/json",
-      // data: JSON.stringify(obj),
+      data: {matterName:name},
       dataType: 'json',
       success: function (res) {
         total=res.data.total
         $('#mainContent').empty()
         res.data.records.forEach((element,index) => {
           let cashShow = ''
-          if(element.departmentBusinessSystemAddress){
-            cashShow = `<a href="${element.departmentBusinessSystemAddress}" target="_blank" class="weui-btn weui-btn_primary">兑现</a>`
+          if(element.applyStatus==0){
+            cashShow = `<a class="weui-btn weui-btn_primary btn-grey">无需申请</a>`
+          }
+          else if(element.matDepartmentBusinessSystemList.length && element.applyStatus==1){
+            cashShow = `<a class="weui-btn weui-btn_primary go-cash" data-toggle="modal" data-target="#myModal" onclick="cashModal(${element.id})">兑现</a>`
           }
           else{
             cashShow = `<a class="weui-btn weui-btn_primary btn-grey">兑现</a>`
@@ -218,6 +230,12 @@
     })
   }
   $(function(){
+    //搜索按钮
+    $('.search_button').click(function(){
+      let name = $('#search').val()
+      window.open(`http://111.16.49.6:81/list.html?searchname=${name}`)
+    })
+    //更多按钮
     $("#addMore").click(function(){
       if(size<total){
         k = false
@@ -226,10 +244,40 @@
         getList()
         if(size>total){
           $("#addMore").empty()
+          window.open("http://111.16.49.6:81/list.html")
         }
       }
     })
+    
   })
+  //兑现按钮
+  function cashModal(id){
+    $("#modalLabelList").empty()
+    $.ajax({
+      url: baseUrl + '/standard/mat_matter/' + id,
+      type: 'get',
+      dataType: 'json',
+      success: function (res) {
+        if (res.data !== null) {
+          if(res.data.matDepartmentBusinessSystemList.length>4){
+            $('#myModal').removeClass("cash-modal-small")
+          }
+          else{
+            $('#myModal').addClass("cash-modal-small")
+          }
+          res.data.matDepartmentBusinessSystemList.forEach((element,index) => {
+            $("#modalLabelList").append(`<a class="weui-btn" title="${element.departmentBusinessSystemName}" href="${element.departmentBusinessSystemAddress}" target="_blank">${element.departmentBusinessSystemName}</a>`)
+          })
+        }
+        else {
+          window.location.href = "404.html"
+        }
+      },
+      error: function (data) {
+        window.location.href="404.html" 
+      }
+    })
+  }
   function go(e){
     window.open(e.getAttribute("url"))
   }
