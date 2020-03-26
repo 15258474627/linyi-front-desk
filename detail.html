@@ -184,7 +184,7 @@
           if (res.data.policyBasisJson.length > 0) {
             res.data.policyBasisJson.forEach((ele, indexs) => {
               if(ele.policyBasisUrl){
-                policyBasis = policyBasis + `<li><a href="${ele.policyBasisUrl}">${ele.policyBasisName}</a></li>`
+                policyBasis = policyBasis + `<li><a href="${ele.policyBasisUrl}" target="_blank">${ele.policyBasisName}</a></li>`
               }
               else{
                 policyBasis = policyBasis + `<li>${ele.policyBasisName}</li>`
@@ -255,6 +255,9 @@
           if(res.data.applyStatus==0){
             cashShow = `<a class="weui-btn weui-btn_primary go-cash btn-grey">无需申请</a>`
           }
+          else if(res.data.matDepartmentBusinessSystemList.length==1 && res.data.applyStatus==1){
+            cashShow = `<a class="weui-btn weui-btn_primary go-cash" href="${res.data.matDepartmentBusinessSystemList[0].departmentBusinessSystemAddress}" target="_blank">兑现</a>`
+          }
           else if(res.data.matDepartmentBusinessSystemList.length && res.data.applyStatus==1){
             cashShow = `<a class="weui-btn weui-btn_primary go-cash" data-toggle="modal" data-target="#myModal" onclick="cashModal(${res.data.id})">兑现</a>`
           }
@@ -301,7 +304,7 @@
              <div class="sub-con">${res.data.subsidizedObject}</div>
            </li>
            <li>
-             <span class="sub-name">政策依据</span>
+             <span class="sub-name">政策名称</span>
              <div class="sub-con">
               <ol>
                 ${policyBasis}
@@ -309,11 +312,15 @@
              </div>
            </li>
            <li>
+             <span class="sub-name">政策条款</span>
+             <div class="sub-con">${res.data.policyProvision}</div>
+           </li>
+           <li>
              <span class="sub-name">办理条件</span>
              <div class="sub-con">${res.data.handlingConditions.replace(/(\r\n|\n|\r)/gm, "<br />")}</div>
            </li>
            <li>
-             <span class="sub-name">补贴标准</span>
+             <span class="sub-name">标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;准</span>
              <div class="sub-con">${res.data.subsidyStandard.replace(/(\r\n|\n|\r)/gm, "<br />")}</div>
            </li>
            <li>

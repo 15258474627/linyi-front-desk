@@ -99,7 +99,7 @@
                         <span class="list-con-item-name">【补贴标准】</span><b>纳税人提供公共交通运输服务、生活服务，以及为居民提供必需生活物资快递收派服务取得的收入免征增值税的，免征城市维护建设税、教育费附加、地方教育附加。</b>
                       </li>
                       <li>
-                        <span class="list-con-item-name">【政策依据】</span><b><a href="javascript:void(0)"
+                        <span class="list-con-item-name">【政策名称】</span><b><a href="javascript:void(0)"
                           target="_blank">《财政部 税务总局关于支持新型冠状病毒感染的肺炎疫情防控有关个人所得税政策的公告》</a>（2020年第10号）</b>
                       </li>
                       <li>
@@ -194,7 +194,12 @@
             let policyBasis = ''
             if(element.policyBasisJson.length>0){
               element.policyBasisJson.forEach((ele,indexs)=>{
-                policyBasis=policyBasis+`<div style="margin-right:20px;">${ele.policyBasisName}</div>`
+                if(ele.policyBasisUrl){
+                  policyBasis = policyBasis + `<a href="${ele.policyBasisUrl}" style="display: block;" target="_blank">${ele.policyBasisName}</a>`
+                }
+                else{
+                  policyBasis = policyBasis + `${ele.policyBasisName}`
+                }
               })
             }
             $('#mainContent').append(`<div class="list-box">
@@ -218,7 +223,7 @@
                         <span class="list-con-item-name">【标   准】</span><b>${element.subsidyStandard}</b>
                       </li>
                       <li>
-                        <span class="list-con-item-name">【政策依据】</span><b>${policyBasis}</b>
+                        <span class="list-con-item-name">【政策名称】</span><b>${policyBasis}</b>
                       </li>
                       <li>
                         <span class="list-con-item-name">【咨询电话】</span><b>${element.telephone}</b>

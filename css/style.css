@@ -908,8 +908,8 @@ a:hover, a:focus{
 
 .list-con-item ul li .list-con-item-name {
   margin-right: 8px;
-  max-width: 3.4rem;
-  min-width: 3.4rem;
+  max-width: 3.8rem;
+  min-width: 3.8rem;
 }
 
 .list-con-item ul li b {
@@ -1842,8 +1842,8 @@ a:hover, a:focus{
     line-height: 1.8rem;
   }
   .list-con-item ul li .list-con-item-name {
-    min-width: 5.5rem;
-    max-width: 5.5rem;
+    min-width: 5.8rem;
+    max-width: 5.8rem;
   }
   .banner-box,
   .main-container .banner {
@@ -1916,25 +1916,36 @@ a:hover, a:focus{
     margin-left: -150px;
     width: 300px;
   }
+  .tab-container .tab-nav li{
+    padding: .65rem .3rem;
+    font-size: 1.1em;
+  }
+  
   .banner-index .banner-box .txt li,.detail-banner .banner-box .txt li{
     padding: 0.18rem .2rem;
-    font-size: 1rem;
+    font-size: .8rem;
   }
   .search-box .box-top .weui-btn{
     padding: 0;
-    font-size: .8em;
+    font-size: .7em;
   }
   .search-box .weui-input{
-    font-size: .8em;
+    font-size: .7em;
     line-height: 2.2rem;
-  }
-  .tab-container .tab-nav li{
-    padding: .65rem .1rem;
   }
   .content-article .article-info {
     margin: 0.65rem .3rem 0;
   }
-
+  .tab-content-item li .txt{
+    font-size: 1em;
+  }
+  .tab-content-item li .btn-group .weui-btn{
+    width: 3.8rem;
+    font-size: .85em;
+  }
+  .spread-box li .txt{
+    font-size: .9em;
+  }
   .article-con ul li .sub-name {
     min-width: 5.4rem;
     width: 5.4rem;
@@ -1950,9 +1961,12 @@ a:hover, a:focus{
 
   .article-con ul li .sub-con,
   .article-con ul li .sub-name {
-    padding: 0.2rem;
+    padding: 0.2rem .5rem;
+    font-size: .85em;
   }
-
+  .content-article .article-info .sub-name{
+    font-size: .85em;
+  }
   .breadcrumb li:nth-child(1) {
     display: none;
   }
@@ -1978,7 +1992,7 @@ a:hover, a:focus{
     padding-right: 0;
     height: 100%;
     line-height: 2rem;
-    font-size: .8rem;
+    font-size: .7rem;
   }
   .search-box .box-top .weui-cells .weui-cell_select-before .weui-select {
     border-right: 0;
