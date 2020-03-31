@@ -210,6 +210,9 @@
           if(element.applyStatus==0){
             cashShow = `<a class="weui-btn weui-btn_primary btn-grey">无需申请</a>`
           }
+          else if(element.matDepartmentBusinessSystemList.length==1 && element.applyStatus==1){
+            cashShow = `<a class="weui-btn weui-btn_primary go-cash" href="${element.matDepartmentBusinessSystemList[0].departmentBusinessSystemAddress}" target="_blank">兑现</a>`
+          }
           else if(element.matDepartmentBusinessSystemList.length && element.applyStatus==1){
             cashShow = `<a class="weui-btn weui-btn_primary go-cash" data-toggle="modal" data-target="#myModal" onclick="cashModal(${element.id})">兑现</a>`
           }
