@@ -708,8 +708,11 @@ a:hover, a:focus{
   border-bottom: 0;
 } */
 .tab-content-item li .txt {
+  display: inline-block;
+  vertical-align: middle;
   font-size: 1.15em;
   width: 80%;
+  margin-right: 70px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -719,11 +722,15 @@ a:hover, a:focus{
   color: #15aff8;
 }
 .tab-content-item li .btn-group {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+  display: inline-block;
+  vertical-align: middle;
 }
 .tab-content-item li .btn-group .weui-btn {
+  display: inline-block;
+  vertical-align: middle;
   margin: 0;
   padding: 0 .2rem;
   height: 1.3rem;
@@ -1384,8 +1391,17 @@ a:hover, a:focus{
   .cash-modal .modal-box{
     height: 80%;
   }
+  .tab-container .tab-nav li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1025px) {
+  .tab-content-item li .txt{
+    margin-right: 20px;
+    width: 70%;
+  }
   .explain-box{
     margin: 0;
   }
@@ -1452,6 +1468,7 @@ a:hover, a:focus{
     min-width: 25%;
   }
   .tab-container .tab-nav li{
+    display: flex;
     padding: 0 .3rem;
     font-size: 1.1em;
     line-height: 1.2;
@@ -1499,6 +1516,7 @@ a:hover, a:focus{
     font-size: 1.5em;
   }
   .tab-container .tab-nav li{
+    display: flex;
     padding: 0 .5rem;
     font-size: 1.2em;
     line-height: 1.2;
@@ -1712,6 +1730,7 @@ a:hover, a:focus{
     padding-bottom: 1rem;
   }
   .tab-container .tab-nav li{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -1739,6 +1758,7 @@ a:hover, a:focus{
     margin-bottom: .5rem;
   }
   .tab-content-item li .txt{
+    margin-right: 0;
     margin-bottom: .5rem;
     white-space: initial;
     width: 100%;
