@@ -66,11 +66,15 @@
 
       <div class="tab-container content-container">
         <ul class="tab-nav">
-		      <li class="active"><a href="http://111.16.49.6:81/list.html" target="_blank"><img src="images/spread01.png" />惠企政策</a></li>
-          <li><a href="http://zwfw.linyi.gov.cn/icity/public/index" target="_blank"><img src="images/spread02.png" />办事服务</a></li>
-          <li><a href="http://123.131.136.102:8699/companyLogin.html" target="_blank"><img src="images/spread03.png" />诉求直达</a></li>
+          <li class="active"><a href="http://111.16.49.6:81/list.html" target="_blank"><img
+                src="images/spread01.png" />惠企政策</a></li>
+          <li><a href="http://zwfw.linyi.gov.cn/icity/public/index" target="_blank"><img
+                src="images/spread02.png" />办事服务</a></li>
+          <li><a href="http://123.131.136.102:8699/companyLogin.html" target="_blank"><img
+                src="images/spread03.png" />诉求直达</a></li>
           <li><img src="images/spread04.png" />互动交流</li>
-          <li><a href="http://xzspjwx.linyi.gov.cn:8089/ext/linyi/eval/index.jsp" target="_blank"><img src="images/spread05.png" />绩效评价</a></li>
+          <li><a href="http://xzspjwx.linyi.gov.cn:8089/ext/linyi/eval/index.jsp" target="_blank"><img
+                src="images/spread05.png" />绩效评价</a></li>
         </ul>
         <div class="tab-content-box">
           <div class="tab-content-item show">
@@ -138,31 +142,34 @@
           </li>
         </ul>
       </div>
-	    <div class="footer content-container">
+      <div class="footer content-container">
         <span>Copyright©2020临沂市行政审批局</span>
-        <span>技术支持：北京国脉互联信息顾问有限公司  国脉集团有限公司</span>
+        <span>技术支持：北京国脉互联信息顾问有限公司 国脉集团有限公司</span>
         <span class="tool">请使用Chrome、360浏览器极速模式或其它非IE内核浏览器访问</span>
+      </div>
     </div>
-  </div>
-  <!-- Modal -->
-  <div class="cash-modal cash-modal-small modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">选择兑现通道</h4>
-        </div>
-        <div class="modal-box">
-          <div class="modal-body" id="modalLabelList">
-            
+    <!-- Modal -->
+    <div class="cash-modal cash-modal-small modal fade" id="myModal" tabindex="-1" role="dialog"
+      aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">选择兑现通道</h4>
+          </div>
+          <div class="modal-box">
+            <div class="modal-body" id="modalLabelList">
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/browser.min.js"></script>
 <script>
   $('.search-box .weui-select .first').click(function () {
     $('.search-box .weui-select ul').toggleClass('active');
@@ -182,41 +189,38 @@
   // });
 </script>
 <script src="js/base.js?random=1"></script>
-<script>
+<script type="text/babel">
   var k = false
   var size = 6
   var total = 0
   getList()
   // 获取政策列表
-  function getList(val){
-    if( k ){
+  function getList(val) {
+    if (k) {
       return false
     }
     k = true
-    if( !val ){
-      current = 0
-    }
     $.ajax({
       url: `${baseUrl}/standard/mat_matter/pages?current=1&size=${size}`,
       type: 'get',
       contentType: "application/json",
-      data: {matterName:name},
+      data: { matterName: name },
       dataType: 'json',
       success: function (res) {
-        total=res.data.total
+        total = res.data.total
         $('#mainContent').empty()
-        res.data.records.forEach((element,index) => {
+        res.data.records.forEach((element, index) => {
           let cashShow = ''
-          if(element.applyStatus==0){
+          if (element.applyStatus == 0) {
             cashShow = `<a class="weui-btn weui-btn_primary btn-grey">无需申请</a>`
           }
-          else if(element.matDepartmentBusinessSystemList.length==1 && element.applyStatus==1){
+          else if (element.matDepartmentBusinessSystemList.length == 1 && element.applyStatus == 1) {
             cashShow = `<a class="weui-btn weui-btn_primary go-cash" href="${element.matDepartmentBusinessSystemList[0].departmentBusinessSystemAddress}" target="_blank">兑现</a>`
           }
-          else if(element.matDepartmentBusinessSystemList.length && element.applyStatus==1){
+          else if (element.matDepartmentBusinessSystemList.length && element.applyStatus == 1) {
             cashShow = `<a class="weui-btn weui-btn_primary go-cash" data-toggle="modal" data-target="#myModal" onclick="cashModal(${element.id})">兑现</a>`
           }
-          else{
+          else {
             cashShow = `<a class="weui-btn weui-btn_primary btn-grey">兑现</a>`
           }
           $('#mainContent').append(`<li>
@@ -232,29 +236,29 @@
       }
     })
   }
-  $(function(){
+  $(function () {
     //搜索按钮
-    $('.search_button').click(function(){
+    $('.search_button').click(function () {
       let name = $('#search').val()
       window.open(`http://111.16.49.6:81/list.html?searchname=${name}`)
     })
     //更多按钮
-    $("#addMore").click(function(){
-      if(size<total){
+    $("#addMore").click(function () {
+      if (size < total) {
         k = false
-        size=size+6
+        size = size + 6
         console.log(size)
         getList()
-        if(size>total){
+        if (size > total) {
           $("#addMore").empty()
           window.open("http://111.16.49.6:81/list.html")
         }
       }
     })
-    
+
   })
   //兑现按钮
-  function cashModal(id){
+  function cashModal(id) {
     $("#modalLabelList").empty()
     $.ajax({
       url: baseUrl + '/standard/mat_matter/' + id,
@@ -262,13 +266,13 @@
       dataType: 'json',
       success: function (res) {
         if (res.data !== null) {
-          if(res.data.matDepartmentBusinessSystemList.length>4){
+          if (res.data.matDepartmentBusinessSystemList.length > 4) {
             $('#myModal').removeClass("cash-modal-small")
           }
-          else{
+          else {
             $('#myModal').addClass("cash-modal-small")
           }
-          res.data.matDepartmentBusinessSystemList.forEach((element,index) => {
+          res.data.matDepartmentBusinessSystemList.forEach((element, index) => {
             $("#modalLabelList").append(`<a class="weui-btn" title="${element.departmentBusinessSystemName}" href="${element.departmentBusinessSystemAddress}" target="_blank">${element.departmentBusinessSystemName}</a>`)
           })
         }
@@ -277,12 +281,13 @@
         }
       },
       error: function (data) {
-        window.location.href="404.html" 
+        window.location.href = "404.html"
       }
     })
   }
-  function go(e){
+  function go(e) {
     window.open(e.getAttribute("url"))
   }
 </script>
+
 </html>

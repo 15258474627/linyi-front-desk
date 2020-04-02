@@ -356,22 +356,29 @@ a:hover, a:focus{
 }
 
 .banner-box {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin: 0 auto;
   height: 100%;
   /* background: url(../images/banner-right.png) top no-repeat; */
 }
 
 .banner-index .banner-box .txt {
-  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.banner-index .banner-box .txt ul,.banner-box .txt{
+  margin: 0 auto;
+  text-align: center;
 }
 .banner-box .txt {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  max-width: 900px;
   min-width: 570px;
 }
 
@@ -434,7 +441,7 @@ a:hover, a:focus{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
   max-width: 1200px;
   text-align: center;
 }
@@ -447,8 +454,10 @@ a:hover, a:focus{
 }
 
 .search-box .box-top .weui-cells {
+  display: inline-block;
+  vertical-align: middle;
   margin-top: 0;
-  width: 90%;
+  width: 84%;
   height: 2rem;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid #1660a3;
@@ -460,6 +469,7 @@ a:hover, a:focus{
   color: #959fb8;
 }
 .search-box .box-top .weui-cell_select-before .weui-cell__hd {
+  width: 5.2rem;
   height: 100%;
 }
 .search-box .box-top .weui-cell_select-before .weui-cell__hd:before {
@@ -595,6 +605,9 @@ a:hover, a:focus{
   color: #15aff8;
 }
 .search-box .box-top .weui-btn {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -4px;
   height: 2rem;
   width: 15%;
   line-height: 2rem;
@@ -616,11 +629,13 @@ a:hover, a:focus{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .tab-container .tab-nav li {
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  vertical-align: middle;
   margin: 0 0.15rem;
   padding: 0 1.15rem;
   height: 2.8rem;
@@ -736,16 +751,22 @@ a:hover, a:focus{
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  margin-top: 1rem;
   box-shadow: 0 2px 3px 0 rgba(63, 80, 106, 0.8);
   border: 1px solid #1660a3;
   border-radius: 5px;
+  margin: 1rem auto 0;
+  text-align: center;
+}
+.main-container .spread-box ul li{
+  display: inline-block;
+  vertical-align: middle;
 }
 .spread-box li a{
-  display: flex;
+  display: block;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   padding: .65rem 1.1rem;
 }
 .spread-box li a:hover{
@@ -758,9 +779,13 @@ a:hover, a:focus{
   transition: all .3s;
 }
 .spread-box li img {
+  display: inline-block;
+  vertical-align: middle;
  height: 2rem;
 }
 .spread-box li .txt {
+  display: inline-block;
+  vertical-align: middle;
   margin-top: 0.5rem;
   font-size: 1.15em;
   color: #fff;
@@ -832,14 +857,17 @@ a:hover, a:focus{
 }
 
 .left-title {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+  display: inline-block;
+  vertical-align: middle;
   width: 99%;
 }
 
 .left-title .sub-title {
   display: inline-block;
+  vertical-align: middle;
   width: 65%;
   min-width: 65%;
   font-size: 1.2em;
@@ -855,6 +883,7 @@ a:hover, a:focus{
 
 .left-title .subject {
   display: inline-block;
+  vertical-align: middle;
   margin-right: 0.8rem;
   font-size: 1em;
   text-align: right;
@@ -871,7 +900,8 @@ a:hover, a:focus{
 }
 
 .down {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   transition: 0.2s;
   transform: rotate(-180deg);
 }
@@ -907,12 +937,16 @@ a:hover, a:focus{
 }
 
 .list-con-item ul li .list-con-item-name {
+  display: inline-block;
+  vertical-align: middle;
   margin-right: 8px;
   max-width: 3.8rem;
   min-width: 3.8rem;
 }
 
 .list-con-item ul li b {
+  display: inline-block;
+  vertical-align: middle;
   font-weight: 400;
   text-align: justify;
 }
@@ -961,6 +995,7 @@ a:hover, a:focus{
   padding: 0.35rem 0;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .list-con .btn-group a {
@@ -1074,8 +1109,8 @@ a:hover, a:focus{
 }
 
 .content-article .article-info .sub-name {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
+  vertical-align: middle;
   margin-right: 1rem;
 }
 
@@ -1102,9 +1137,8 @@ a:hover, a:focus{
 }
 
 .article-con ul li .sub-name {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  vertical-align: middle;
   margin-right: -0.05rem;
   padding: 0.8rem;
   width: 6rem;
@@ -1167,9 +1201,10 @@ a:hover, a:focus{
 }
 .article-info .sub-name .question{
   display:inline-block;
+  vertical-align: middle;
   margin-left:.3rem;
-  width:.8rem;
   min-width: .8rem;
+  width:.8rem;
   height:.8rem;
   cursor:pointer;
   text-align: left;
@@ -1181,10 +1216,9 @@ a:hover, a:focus{
 }
 
 .article-con ul li .sub-con {
-  display: inline-flex;
-  flex: 2;
-  align-items: center;
-  flex-wrap: wrap;
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
   padding: 0.8rem;
   border-left: 1px solid #eee;
 }
@@ -1214,10 +1248,13 @@ a:hover, a:focus{
   justify-content: center;
   align-items: center;
   margin: 0 -1rem;
+  text-align: center;
   padding: 1rem;
   border-top: 1px solid #eee;
 }
 #goCash .weui-btn_primary.go-cash{
+  display: inline-block;
+  vertical-align: middle;
   margin: 0 .2rem;
   width: 15%;
   font-size: 1.1em;
@@ -1227,6 +1264,8 @@ a:hover, a:focus{
   color: #fff;
 }
 #goCash .weui-btn_default{
+  display: inline-block;
+  vertical-align: middle;
   margin: 0 .2rem;
   width: 15%;
   font-size: 1.1em;
@@ -1641,7 +1680,7 @@ a:hover, a:focus{
     line-height: 1;
     font-size: 1.15em;
   }
-  .search-box .box-top .weui-cells .weui-cell_select-before .weui-select{
+  .search-box .box-top .weui-cells .weui-cell_select-before .weui-select,.search-box .box-top .weui-cell_select-before .weui-cell__hd{
     width: 6rem;
   }
   .search-box .box-top .weui-cells .weui-cell_select-before .weui-select span{
@@ -1665,7 +1704,7 @@ a:hover, a:focus{
     margin-bottom:0;
   }
   .banner-index .banner-box .txt,.banner .banner-box .txt{
-    margin: 1rem 0 .8rem .5rem;
+   padding: 1rem 0 .8rem .5rem;
   }
   .detail-banner .banner-box .txt{
   }
@@ -1995,7 +2034,7 @@ a:hover, a:focus{
     line-height: 2rem;
     font-size: .7rem;
   }
-  .search-box .box-top .weui-cells .weui-cell_select-before .weui-select {
+  .search-box .box-top .weui-cells .weui-cell_select-before .weui-select,.search-box .box-top .weui-cell_select-before .weui-cell__hd {
     border-right: 0;
     width: 5em;
     height: 100%;

@@ -117,7 +117,7 @@
                 <a class="btn-plain" href="javascript:void(0)">下一页</a>
               </div> -->
               <div id="pagingmix" class="page m-style M-box3">
-            
+
               </div>
               <!--/.pagecode-->
             </div>
@@ -127,7 +127,7 @@
 
       <div class="footer content-container">
         <span>Copyright©2020临沂市行政审批局</span>
-        <span>技术支持：北京国脉互联信息顾问有限公司  国脉集团有限公司</span>
+        <span>技术支持：北京国脉互联信息顾问有限公司 国脉集团有限公司</span>
         <span class="tool">请使用Chrome、360浏览器极速模式或其它非IE内核浏览器访问</span>
       </div>
     </div>
@@ -135,6 +135,7 @@
   </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/browser.min.js"></script>
   <script type="text/javascript" src="js/jquery.pagination.js"></script>
   <script type="text/javascript">
     $(function () {
@@ -146,28 +147,28 @@
     });
   </script>
   <script src="js/base.js?random=1"></script>
-  <script>
+  <script type="text/babel">
     var current = 0
     var size = 15
     var k = false
     getList()
     //获取地址?后面某值
-    function getQueryVariable(variable){
+    function getQueryVariable(variable) {
       var query = window.location.search.substring(1);
       var vars = query.split("&");
-      for (var i=0;i<vars.length;i++) {
-              var pair = vars[i].split("=");
-              if(pair[0] == variable){return pair[1];}
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) { return pair[1]; }
       }
-      return('');
+      return ('');
     }
     // 获取政策列表
-    function getList(val){
-      if( k ){
+    function getList(val) {
+      if (k) {
         return false
       }
       k = true
-      if( !val ){
+      if (!val) {
         current = 0
       }
       var search_name = getQueryVariable('searchname')
@@ -177,27 +178,27 @@
         url: `${baseUrl}/standard/mat_matter/pages?current=${current || 1}`,
         type: 'get',
         contentType: "application/json",
-        data: {matterName:name},
+        data: { matterName: name },
         dataType: 'json',
         success: function (res) {
           $('#mainContent').empty()
-          if(!val){
-            laodPage(res.data.total,res.data.pages)
+          if (!val) {
+            laodPage(res.data.total, res.data.pages)
           }
           $('#total').html(res.data.total)
           $('.el').remove()
           $('#pagingmix').prepend(`<span class="el">共 ${res.data.total} 条</span>`)
-          if( res.data.total === 0 ){
+          if (res.data.total === 0) {
             $('#mainContent').append(`<div style="text-align:center"><img src="images/wjg.png"></div>`)
           }
-          res.data.records.forEach((element,index) => {
+          res.data.records.forEach((element, index) => {
             let policyBasis = ''
-            if(element.policyBasisJson.length>0){
-              element.policyBasisJson.forEach((ele,indexs)=>{
-                if(ele.policyBasisUrl){
+            if (element.policyBasisJson.length > 0) {
+              element.policyBasisJson.forEach((ele, indexs) => {
+                if (ele.policyBasisUrl) {
                   policyBasis = policyBasis + `<a href="${ele.policyBasisUrl}" style="display: block;" target="_blank">${ele.policyBasisName}</a>`
                 }
-                else{
+                else {
                   policyBasis = policyBasis + `${ele.policyBasisName}`
                 }
               })
@@ -237,8 +238,8 @@
               </div>`)
           })
           k = false
-          $(function() {
-            $('.list-title').click(function(){
+          $(function () {
+            $('.list-title').click(function () {
               $(this).find('.down').toggleClass('rotate');
               $(this).parent('.list-box').toggleClass('height-auto').siblings('.list-box').removeClass('height-auto');
               $(this).parent('.list-box').siblings('.list-box').find('.down').addClass('rotate');
@@ -249,120 +250,135 @@
       })
     }
     //分页
-    function laodPage(total){
-      $('.M-box3').pagination(total,{
+    function laodPage(total) {
+      $('.M-box3').pagination(total, {
         // pageCount: pages, 
-        items_per_page:10,
-        num_display_entries:1,
-        current_page:0,
-        num_edge_entries:1,
-        prev_text:"上一页",
-        next_text:"下一页",
-        ellipse_text:"...",
-        prev_show_always:true,
-        next_show_always:true,
+        items_per_page: 10,
+        num_display_entries: 1,
+        current_page: 0,
+        num_edge_entries: 1,
+        prev_text: "上一页",
+        next_text: "下一页",
+        ellipse_text: "...",
+        prev_show_always: true,
+        next_show_always: true,
         callback: function (page) {
-            current = page+1
-            getList(1)
+          current = page + 1
+          getList(1)
         }
       });
     }
-    $(function(){
+    $(function () {
       //搜索按钮
-      $('.search_button').click(function(){
+      $('.search_button').click(function () {
         let name = $('#search').val()
         location.replace(`http://111.16.49.6:81/list.html?searchname=${name}`)
       })
     })
   </script>
   <style>
-        /*分页  */
-    .M-box3{
-        display: flex;
-        justify-content: center;
-        margin:20px 0;
+    /*分页  */
+    .M-box3 {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
     }
+
     .m-style:before,
     .m-style:after {
-        content: "";
-        display: table;
+      content: "";
+      display: table;
     }
 
     .m-style:after {
-        clear: both;
-        overflow: hidden;
+      clear: both;
+      overflow: hidden;
     }
-    .m-style span{
-        display:block;
-        padding:0 15px;
-        border:1px solid #ccc;
-        margin:0 5px;
-        line-height:29px;
+
+    .m-style span {
+      display: block;
+      padding: 0 15px;
+      border: 1px solid #ccc;
+      margin: 0 5px;
+      line-height: 29px;
     }
-    .m-style .active{
-        display:block;
-        padding:0 10px;
-        border:1px solid #347ce7;
-        margin:0 5px;
-        line-height:29px;
-        background:#347ce7;
-        color: white !important;
+
+    .m-style .active {
+      display: block;
+      padding: 0 10px;
+      border: 1px solid #347ce7;
+      margin: 0 5px;
+      line-height: 29px;
+      background: #347ce7;
+      color: white !important;
     }
-    .m-style .prev,.m-style .next {
-        font-weight: 400;
-        font-family: /*Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,*/ Microsoft YaHei, "微软雅黑", Arial, sans-serif;
-        color: #666!important;
-        font-size: 14px;
-        display:block;
-        padding:0 10px;
-        border:1px solid #eee;
-        margin:0 5px;
-        text-align:center;
-        line-height:29px;
-        background-color:#f4f4f5;
+
+    .m-style .prev,
+    .m-style .next {
+      font-weight: 400;
+      font-family:
+        /*Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,*/
+        Microsoft YaHei, "微软雅黑", Arial, sans-serif;
+      color: #666 !important;
+      font-size: 14px;
+      display: block;
+      padding: 0 10px;
+      border: 1px solid #eee;
+      margin: 0 5px;
+      text-align: center;
+      line-height: 29px;
+      background-color: #f4f4f5;
     }
+
     .m-style span {
       cursor: pointer;
     }
-    .m-style a{
+
+    .m-style a {
       cursor: pointer;
-        font-weight: 400;
-        font-family: /*Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,*/ Microsoft YaHei, "微软雅黑", Arial, sans-serif;
-        color: #666;
-        font-size: 14px;
-        display:block;
-        padding:0 10px;
-        border:1px solid #eee;
-        margin:0 5px;
-        text-align:center;
-        line-height:29px;
-        background-color:#f4f4f5;
+      font-weight: 400;
+      font-family:
+        /*Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,*/
+        Microsoft YaHei, "微软雅黑", Arial, sans-serif;
+      color: #666;
+      font-size: 14px;
+      display: block;
+      padding: 0 10px;
+      border: 1px solid #eee;
+      margin: 0 5px;
+      text-align: center;
+      line-height: 29px;
+      background-color: #f4f4f5;
     }
-    .m-style a:hover,.m-style .active:hover a{
-        border:1px solid #347ce7;
-        text-decoration:none;
+
+    .m-style a:hover,
+    .m-style .active:hover a {
+      border: 1px solid #347ce7;
+      text-decoration: none;
     }
-    #bp-3-element-test{
-        display: flex;
-        flex-direction: row;
+
+    #bp-3-element-test {
+      display: flex;
+      flex-direction: row;
     }
-    #bp-3-element-test>li{
-        line-height: 29px;
-        margin:0 5px;
+
+    #bp-3-element-test>li {
+      line-height: 29px;
+      margin: 0 5px;
     }
 
     .jump-ipt {
-        float: left;
-        margin: 0 5px;
-        width: 38px;
-        height: 30px;
-        line-height: 29px;
-        text-align: center;
-        background: #fff;
-        border: 1px solid #ebebeb;
-        outline: none;
-        color: #444;
-        font-size: 14px;
+      float: left;
+      margin: 0 5px;
+      width: 38px;
+      height: 30px;
+      line-height: 29px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #ebebeb;
+      outline: none;
+      color: #444;
+      font-size: 14px;
     }
   </style>
 </body>
