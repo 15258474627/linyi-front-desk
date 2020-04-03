@@ -825,7 +825,7 @@
     -webkit-transform:scaleX(0.5);
             transform:scaleX(0.5);
   }
-  .weui-cell_select-before .weui-cell__hd:before{
+  /* .weui-cell_select-before .weui-cell__hd:before{
     content:" ";
     display:inline-block;
     height:6px;
@@ -841,7 +841,7 @@
     top:50%;
     right:15px;
     margin-top:-4px;
-  }
+  } */
   .weui-cell_select-before .weui-cell__bd{
     padding-left:15px;
   }

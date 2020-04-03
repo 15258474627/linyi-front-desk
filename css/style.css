@@ -481,7 +481,7 @@ input::-ms-clear{display: none;}
 .search-box .box-top .weui-cell_select-before .weui-cell__hd:before {
   position: absolute;
   content:"";
-  top: 50%;
+  top: 43%;
   right: 10px;;
   background-image: url(../images/ico.png);
   width: 15px;
@@ -632,9 +632,6 @@ input::-ms-clear{display: none;}
   opacity: .9;
 }
 .search-box .box-top .weui-btn:after {
-  display: none;
-}
-.search-box .weui-cell_select-before .weui-cell__hd:before{
   display: none;
 }
 .list-box{
@@ -1909,7 +1906,7 @@ input::-ms-clear{display: none;}
 
 @media screen and (max-width: 399px) {
   .search-box .box-top .weui-cell_select-before .weui-cell__hd:before{
-    top: 50%;
+    top: 39%;
     right: 0;
   }
   .list-box .left-title .sub-title{
