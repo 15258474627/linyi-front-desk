@@ -445,6 +445,8 @@ a:hover, a:focus{
   max-width: 1200px;
   text-align: center;
 }
+/* 文本输入框删除按钮 */
+input::-ms-clear{display: none;}
 .search-box .box-top {
   display: flex;
   justify-content: flex-start;
@@ -464,22 +466,32 @@ a:hover, a:focus{
   overflow: inherit;
   border-radius: 25px 0 0 25px;
 }
+.search-box .weui-cell_select-before .weui-cell__hd:after{
+  display: none;
+}
 
 .search-box .box-top .weui-cells input::-webkit-input-placeholder {
   color: #959fb8;
 }
 .search-box .box-top .weui-cell_select-before .weui-cell__hd {
+  position: relative;
   width: 5.2rem;
   height: 100%;
 }
 .search-box .box-top .weui-cell_select-before .weui-cell__hd:before {
+  position: absolute;
+  content:"";
+  top: 50%;
+  right: 10px;;
   background-image: url(../images/ico.png);
   width: 15px;
   height: 9px;
   border: 0;
   transform: initial;  
 }
-
+.search-box .box-top .weui-cell_select-before .weui-cell__hd:before{
+  transform: initial;
+}
 .search-box .box-top .weui-cells .weui-cell_select-before {
   height: 100%;
   font-size: 0.95em;
@@ -583,6 +595,7 @@ a:hover, a:focus{
 .search-box .weui-input{
   height: 100%;
   line-height: 2rem;
+  text-indent: .5em;
   color: #fff;
   box-sizing: border-box;
 }
@@ -619,6 +632,9 @@ a:hover, a:focus{
   opacity: .9;
 }
 .search-box .box-top .weui-btn:after {
+  display: none;
+}
+.search-box .weui-cell_select-before .weui-cell__hd:before{
   display: none;
 }
 .list-box{
@@ -739,6 +755,7 @@ a:hover, a:focus{
   line-height: 1.3rem;
   font-size: 1em;
   background-image: linear-gradient(#ed7f0f, #feab22);
+  cursor: pointer;
 }
 .tab-content-item li .btn-group .weui-btn.btn-grey{
   background-image: linear-gradient(#5a6b93, #556286);
@@ -1309,7 +1326,7 @@ a:hover, a:focus{
 .cash-modal .modal-body{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .8rem;
+  grid-column-gap:.8rem;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
@@ -1323,7 +1340,9 @@ a:hover, a:focus{
   height: 75%;
 }
 .cash-modal .modal-body a{
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
+  margin: .8rem 0;
   margin-top: 0;
   min-width: 100%;
   max-width: 100%;
@@ -1336,6 +1355,15 @@ a:hover, a:focus{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.cash-modal .modal-body a:nth-of-type(2n+1){
+  margin-right: .8rem;
+}
+.cash-modal-small .modal-body a{
+  margin-bottom: .8rem;
+}
+.cash-modal-small .modal-body a:last-child{
+  margin-bottom: 0;
 }
 .cash-modal .modal-body a:after,.cash-modal .modal-body a:before{
   display: none;
@@ -1880,6 +1908,10 @@ a:hover, a:focus{
 }
 
 @media screen and (max-width: 399px) {
+  .search-box .box-top .weui-cell_select-before .weui-cell__hd:before{
+    top: 50%;
+    right: 0;
+  }
   .list-box .left-title .sub-title{
     margin-bottom: .5rem;
     line-height: 1rem;
@@ -2056,7 +2088,7 @@ a:hover, a:focus{
   }
   .search-box .box-top .weui-cells .weui-cell_select-before .weui-select,.search-box .box-top .weui-cell_select-before .weui-cell__hd {
     border-right: 0;
-    width: 5em;
+    width: 6.5em;
     height: 100%;
     line-height: 2rem;
   }
