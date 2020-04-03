@@ -169,7 +169,7 @@
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!-- <script src="js/browser.min.js"></script> -->
+<script src="js/browser.min.js"></script>
 <script>
   $('.search-box .weui-select .first').click(function () {
     $('.search-box .weui-select ul').toggleClass('active');
@@ -189,8 +189,7 @@
   // });
 </script>
 <script src="js/base.js?random=1"></script>
-<!-- <script type="text/babel"> -->
-<script>
+<script type="text/babel">
   var k = false
   var size = 6
   var total = 0
@@ -219,7 +218,8 @@
             cashShow = `<a class="weui-btn weui-btn_primary go-cash" href="${element.matDepartmentBusinessSystemList[0].departmentBusinessSystemAddress}" target="_blank">兑现</a>`
           }
           else if (element.matDepartmentBusinessSystemList.length && element.applyStatus == 1) {
-            cashShow = `<a class="weui-btn weui-btn_primary go-cash" data-toggle="modal" data-target="#myModal" onclick="cashModal(${element.id})">兑现</a>`
+            cashShow = `<a class="weui-btn weui-btn_primary clickGo go-cash" data-toggle="modal" data-target="#myModal" name="${element.id}">兑现</a>`
+            // cashShow = `<a class="weui-btn weui-btn_primary go-cash" data-toggle="modal" data-target="#myModal" onclick="cashModal(${element.id})">兑现</a>`
           }
           else {
             cashShow = `<a class="weui-btn weui-btn_primary btn-grey">兑现</a>`
@@ -234,6 +234,9 @@
               </li>`)
         })
         k = true
+        $(".clickGo").click(function () {
+          cashModal($(this)[0].name)
+        })
       }
     })
   }
