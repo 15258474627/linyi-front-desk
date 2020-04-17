@@ -166,6 +166,40 @@
       </div>
     </div>
 </body>
+<style type="text/css">
+  .tab-content-item li .btn-group .weui-btn{
+    background-image:inherit;
+    background-color: #ccc!important;
+  }
+  .search-box .box-top .weui-btn{
+    background-image:inherit;
+    background-color: #ccc!important;
+  }
+  .banner-index .banner-box .txt li:before{
+    background-color: #ccc!important;      
+  }
+  html{
+    filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%); 
+    -moz-filter: grayscale(100%); 
+    -ms-filter: grayscale(100%); 
+    -o-filter: grayscale(100%); 
+    filter: url("data:image/svg+xml;utf8,#grayscale"); 
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); 
+    -webkit-filter: grayscale(1);
+    filter: grayscale(100%);/*火狐*/
+    -webkit-filter:grayscale(100%);/*chrome*/
+    filter:gray; /*IE7-9*/
+  }    
+</style>
+
+<script type="text/javascript" src="js/grayscale.js"></script>
+<script type="text/javascript">
+  var navStr = navigator.userAgent.toLowerCase();
+  if(navStr.indexOf("msie 10.0")!==-1||navStr.indexOf("rv:11.0")!==-1){ // 判断是IE10或者IE11
+      grayscale(document.body);
+  }
+  </script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/browser.min.js"></script>
